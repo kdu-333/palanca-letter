@@ -3,176 +3,240 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>4 Lyanne Lahat Yan</title>
+    <title>4 Lyanne lahat yan</title>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime&family=Montserrat:wght@300;500&display=swap"
         rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            background: #0f0f0f;
             font-family: 'Montserrat', sans-serif;
-            color: #eee;
+            background: #e9e2d0;
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            position: relative;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: #1a1a1a;
-            padding: 50px;
-            border-radius: 18px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            position: relative;
+            max-width: 800px;
+            background: #fffdf6;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            padding: 60px 50px;
+            overflow: visible;
+            z-index: 1;
+        }
+
+        /* ASCII Flowers */
+        .ascii-flower {
+            position: absolute;
+            top: 20px;
+            left: -150px;
+            /* push to left */
+            font-family: monospace;
+            white-space: pre;
+            font-size: 12px;
+            line-height: 10px;
+            color: rgba(220, 20, 60, 0.3);
+            /* red, semi-transparent */
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Duplicate flower slightly lower */
+        .ascii-flower.duplicate {
+            top: 300px;
+            left: -120px;
+            color: rgba(220, 20, 60, 0.25);
+            /* lighter red for depth */
         }
 
         .title {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
             text-align: center;
-            color: #7b1c1c;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #aaa;
-            font-size: 14px;
+            color: #7b4f4f;
+            margin-bottom: 15px;
         }
 
         .letter {
+            font-family: 'Courier Prime', monospace;
             font-size: 18px;
-            line-height: 2;
+            line-height: 1.8;
+            white-space: normal;
+            position: relative;
+            z-index: 1;
+            color: #3b2f2f;
         }
 
-        .highlight {
-            color: #b22222;
-            font-weight: 500;
+        .letter p {
+            margin-bottom: 1.4em;
         }
 
         .signature {
-            margin-top: 40px;
             text-align: right;
-            font-size: 20px;
+            margin-top: 50px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 24px;
+            color: #7b4f4f;
         }
 
-        /* Images */
-        .photo {
-            width: 100%;
-            border-radius: 12px;
-            margin: 30px 0;
-            filter: brightness(90%);
-        }
-
-        /* Divider */
-        .divider {
-            height: 1px;
-            background: #7b1c1c;
-            margin: 40px 0;
-        }
-
-        /* Music button */
         .music {
-            text-align: center;
-            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
         }
 
-        button {
-            background: #7b1c1c;
-            border: none;
-            padding: 10px 20px;
+        .play-btn {
+            background: #7b4f4f;
             color: white;
-            border-radius: 20px;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 25px;
+            font-size: 16px;
             cursor: pointer;
-            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
         }
 
-        button:hover {
-            background: #a32020;
+        .play-btn:hover {
+            background: #9b6a6a;
+        }
+
+        .play-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
         }
     </style>
 </head>
 
 <body>
-
     <audio id="song" loop>
         <source src="music.mp3" type="audio/mp3">
     </audio>
 
+    <!-- ASCII Flowers -->
+    <pre class="ascii-flower">
+                 .... 
+                           ,;;'''';;,                    ,;;;;, 
+                 ,        ;;'      `;;,               .,;;;'   ; 
+              ,;;;       ;;          `;;,';;;,.     ,%;;'     ' 
+            ,;;,;;       ;;         ,;`;;;, `;::.  %%;' 
+           ;;;,;;;       `'       ,;;; ;;,;;, `::,%%;' 
+           ;;;,;;;,          .,%%%%%'% ;;;;,;;   %;;; 
+ ,%,.      `;;;,;;;,    .,%%%%%%%%%'%; ;;;;;,;;  %;;; 
+;,`%%%%%%%%%%`;;,;;'%%%%%%%%%%%%%'%%'  `;;;;;,;, %;;; 
+;;;,`%%%%%%%%%%%,; ..`%%%%%%%%;'%%%'    `;;;;,;; %%;; 
+ `;;;;;,`%%%%%,;;/, .. `"""'',%%%%%      `;;;;;; %%;;, 
+    `;;;;;;;,;;/////,.    ,;%%%%%%%        `;;;;,`%%;; 
+           ;;;/%%%%,%///;;;';%%%%%%,          `;;;%%;;, 
+          ;;;/%%%,%%%%%/;;;';;'%%%%%,             `%%;; 
+         .;;/%%,%%%%%//;;'  ;;;'%%%%%,             %%;;, 
+         ;;//%,%%%%//;;;'   `;;;;'%%%%             `%;;; 
+         ;;//%,%//;;;;'      `;;;;'%%%              %;;;, 
+         `;;//,/;;;'          `;;;'%%'              `%;;; 
+           `;;;;'               `;'%'                `;;;; 
+                                  '      .,,,.        `;;;; 
+                                      ,;;;;;;;;;;,     `;;;; 
+                                     ;;;'    ;;;,;;,    `;;;; 
+                                     ;;;      ;;;;,;;.   `;;;; 
+                                      `;;      ;;;;;,;;   ;;;; 
+                                        `'      `;;;;,;;  ;;;; 
+                                                   `;;,;, ;;;; 
+                                                      ;;, ;;;; 
+                                                        ';;;;; 
+                                                         ;;;;; 
+                                                        .;;;;' 
+                                                       .;;;;' 
+                                                      ;;;;;' 
+                                                     ,;;;;'
+</pre>
+
+    <pre class="ascii-flower duplicate">
+                 .... 
+                           ,;;'''';;,                    ,;;;;, 
+                 ,        ;;'      `;;,               .,;;;'   ; 
+              ,;;;       ;;          `;;,';;;,.     ,%;;'     ' 
+            ,;;,;;       ;;         ,;`;;;, `;::.  %%;' 
+           ;;;,;;;       `'       ,;;; ;;,;;, `::,%%;' 
+           ;;;,;;;,          .,%%%%%'% ;;;;,;;   %;;; 
+ ,%,.      `;;;,;;;,    .,%%%%%%%%%'%; ;;;;;,;;  %;;; 
+;,`%%%%%%%%%%`;;,;;'%%%%%%%%%%%%%'%%'  `;;;;;,;, %;;; 
+;;;,`%%%%%%%%%%%,; ..`%%%%%%%%;'%%%'    `;;;;,;; %%;; 
+ `;;;;;,`%%%%%,;;/, .. `"""'',%%%%%      `;;;;;; %%;;, 
+    `;;;;;;;,;;/////,.    ,;%%%%%%%        `;;;;,`%%;; 
+           ;;;/%%%%,%///;;;';%%%%%%,          `;;;%%;;, 
+          ;;;/%%%,%%%%%/;;;';;'%%%%%,             `%%;; 
+         .;;/%%,%%%%%//;;'  ;;;'%%%%%,             %%;;, 
+         ;;//%,%%%%//;;;'   `;;;;'%%%%             `%;;; 
+         ;;//%,%//;;;;'      `;;;;'%%%              %;;;, 
+         `;;//,/;;;'          `;;;'%%'              `%;;; 
+           `;;;;'               `;'%'                `;;;; 
+                                  '      .,,,.        `;;;; 
+                                      ,;;;;;;;;;;,     `;;;; 
+                                     ;;;'    ;;;,;;,    `;;;; 
+                                     ;;;      ;;;;,;;.   `;;;; 
+                                      `;;      ;;;;;,;;   ;;;; 
+                                        `'      `;;;;,;;  ;;;; 
+                                                   `;;,;, ;;;; 
+                                                      ;;, ;;;; 
+                                                        ';;;;; 
+                                                         ;;;;; 
+                                                        .;;;;' 
+                                                       .;;;;' 
+                                                      ;;;;;' 
+                                                     ,;;;;'
+</pre>
+
     <div class="container">
+        <h1 class="title">A Letter 4 U</h1>
+
+        <div class="letter">
+            <p>Dear <b>Lyanne Lei</b> ng Mundo,</p>
+
+            <p>
+                Even though I’ve only known you for a short time, it’s been enough to see how determined and capable you
+                are.
+                As you are graduating and getting ready for a new chapter in your life, I just want to wish you all the
+                best.
+                May your dreams slowly turn into reality, and may every goal you set for yourself be reached in your own
+                time.
+            </p>
+
+            <p>
+                College is only the beginning of a much bigger adventure ahead. I hope life brings you growth,
+                happiness,
+                and success in ways you’ve always hoped for. Believe in yourself and keep going. I really believe you
+                can do it.
+                And if life ever gets confusing, stressful, or just one of those “what am I doing with my life” moments,
+                you can always lean on me. I’m always ready to listen. :)
+            </p>
+
+            <p>
+                Good luck in everything that comes next. You’ve got this.
+            </p>
+        </div>
+
+        <div class="signature">
+            — Krystian Uy
+        </div>
+
         <div class="music">
-            <button onclick="document.getElementById('song').play()">
+            <button class="play-btn" onclick="document.getElementById('song').play()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
                 Play Music
             </button>
         </div>
-
-
-        <h1 class="title">A Letter For You</h1>
-        <p class="subtitle">written with quiet thoughts and late night memories</p>
-
-        <img src="lily1.jpg" class="photo">
-
-        <div class="letter">
-
-            <p>Dear Lyanne Lei ng Mundo,</p>
-
-            <p>
-                This is just something simple I wanted to make for you.
-                Not dramatic. Not overdone.
-                Just honest thoughts written quietly, like scenes in a slow movie.
-            </p>
-
-            <p>
-                I always think about how you love watching movies
-                how you get lost in stories
-                how you notice the small details most people miss.
-                That kind of perspective is rare.
-            </p>
-
-            <p>
-                And of course, your love for <span class="highlight">F1</span>.
-                The speed, the focus, the discipline.
-                It somehow fits your personality
-                calm on the outside, intense when it matters.
-            </p>
-
-            <img src="lily2.jpg" class="photo">
-
-            <p>
-                You have such cool taste in music.
-                The kind that feels like night drives
-                city lights
-                windows down
-                thoughts running wild.
-            </p>
-
-            <p>
-                I also remember how you hate pink
-                but love <span class="highlight">maroon, red, and black</span>.
-                Strong colors.
-                Bold.
-                Just like you.
-            </p>
-
-            <p>
-                This letter isn’t meant to be heavy.
-                Just a reminder
-                that someone out here appreciates you
-                exactly the way you are.
-            </p>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="signature">
-            — Krystian
-        </div>
-
-
     </div>
-
 </body>
 
 </html>
