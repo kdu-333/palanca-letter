@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>4 Lyanne Lahat Yan</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: #0f0f0f;
+            font-family: 'Montserrat', sans-serif;
+            color: #eee;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #1a1a1a;
+            padding: 50px;
+            border-radius: 18px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            text-align: center;
+            color: #7b1c1c;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .letter {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .highlight {
+            color: #b22222;
+            font-weight: 500;
+        }
+
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+            font-size: 20px;
+        }
+
+        /* Images */
+        .photo {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+            filter: brightness(90%);
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: #7b1c1c;
+            margin: 40px 0;
+        }
+
+        /* Music button */
+        .music {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background: #7b1c1c;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #a32020;
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio id="song" loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="container">
+        <div class="music">
+            <button onclick="document.getElementById('song').play()">
+                Play Music
+            </button>
+        </div>
+
+
+        <h1 class="title">A Letter For You</h1>
+        <p class="subtitle">written with quiet thoughts and late night memories</p>
+
+        <img src="lily1.jpg" class="photo">
+
+        <div class="letter">
+
+            <p>Dear Lyanne Lei ng Mundo,</p>
+
+            <p>
+                This is just something simple I wanted to make for you.
+                Not dramatic. Not overdone.
+                Just honest thoughts written quietly, like scenes in a slow movie.
+            </p>
+
+            <p>
+                I always think about how you love watching movies
+                how you get lost in stories
+                how you notice the small details most people miss.
+                That kind of perspective is rare.
+            </p>
+
+            <p>
+                And of course, your love for <span class="highlight">F1</span>.
+                The speed, the focus, the discipline.
+                It somehow fits your personality
+                calm on the outside, intense when it matters.
+            </p>
+
+            <img src="lily2.jpg" class="photo">
+
+            <p>
+                You have such cool taste in music.
+                The kind that feels like night drives
+                city lights
+                windows down
+                thoughts running wild.
+            </p>
+
+            <p>
+                I also remember how you hate pink
+                but love <span class="highlight">maroon, red, and black</span>.
+                Strong colors.
+                Bold.
+                Just like you.
+            </p>
+
+            <p>
+                This letter isn’t meant to be heavy.
+                Just a reminder
+                that someone out here appreciates you
+                exactly the way you are.
+            </p>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="signature">
+            — Krystian
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
