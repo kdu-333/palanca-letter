@@ -5,81 +5,142 @@
     <meta charset="UTF-8">
     <title>4 Lyanne lahat yan</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime&family=Montserrat:wght@300;500&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime&display=swap"
         rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background: #e9e2d0;
+            background: #efe7d6;
+            font-family: 'Courier Prime', monospace;
             display: flex;
             justify-content: center;
-            padding: 50px 20px;
+            padding: 80px 20px;
             position: relative;
+            overflow-x: hidden;
         }
 
-        .container {
-            position: relative;
-            max-width: 800px;
-            background: #fffdf6;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            padding: 60px 50px;
-            overflow: visible;
+        .lily {
+            position: absolute;
+            width: 260px;
+            opacity: .92;
+            filter: blur(.2px);
+            animation: float 6s ease-in-out infinite;
             z-index: 1;
         }
 
-        /* ASCII Flowers */
-        .ascii-flower {
-            position: absolute;
-            top: 20px;
-            left: -150px;
-            /* push to left */
-            font-family: monospace;
-            white-space: pre;
-            font-size: 12px;
-            line-height: 10px;
-            color: rgba(220, 20, 60, 0.3);
-            /* red, semi-transparent */
-            pointer-events: none;
-            z-index: 0;
+        .l1 {
+            left: -90px;
+            top: -60px;
+            --flip: -1;
+            --rot: -8deg;
         }
 
-        /* Duplicate flower slightly lower */
-        .ascii-flower.duplicate {
-            top: 300px;
-            left: -120px;
-            color: rgba(220, 20, 60, 0.25);
-            /* lighter red for depth */
+        .l2 {
+            left: -60px;
+            top: 130px;
+            --flip: -1;
+            --rot: 4deg;
+        }
+
+        .l3 {
+            left: -100px;
+            top: 310px;
+            --flip: -1;
+            --rot: -3deg;
+        }
+
+        .l4 {
+            left: -70px;
+            top: 520px;
+            --flip: -1;
+            --rot: 7deg;
+        }
+
+        .l5 {
+            left: -90px;
+            top: 760px;
+            --flip: -1;
+            --rot: -5deg;
+        }
+
+        .r1 {
+            right: -90px;
+            top: -40px;
+            --rot: 6deg;
+        }
+
+        .r2 {
+            right: -60px;
+            top: 160px;
+            --rot: -4deg;
+        }
+
+        .r3 {
+            right: -100px;
+            top: 350px;
+            --rot: 5deg;
+        }
+
+        .r4 {
+            right: -60px;
+            top: 560px;
+            --rot: -6deg;
+        }
+
+        .r5 {
+            right: -90px;
+            top: 800px;
+            --rot: 4deg;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scaleX(var(--flip, 1)) rotate(var(--rot, 0deg));
+            }
+
+            50% {
+                transform: translateY(-12px) scaleX(var(--flip, 1)) rotate(var(--rot, 0deg));
+            }
+        }
+
+        .container {
+            width: 760px;
+            background: #fffdf6;
+            border-radius: 18px;
+            padding: 60px 55px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .18);
+            position: relative;
+            z-index: 5;
+        }
+
+        .container:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
         }
 
         .title {
             font-family: 'Great Vibes', cursive;
-            font-size: 50px;
             text-align: center;
+            font-size: 48px;
             color: #7b4f4f;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
         .letter {
-            font-family: 'Courier Prime', monospace;
-            font-size: 18px;
-            line-height: 1.8;
-            white-space: normal;
-            position: relative;
-            z-index: 1;
+            font-size: 17px;
+            line-height: 1.9;
             color: #3b2f2f;
-        }
-
-        .letter p {
-            margin-bottom: 1.4em;
         }
 
         .signature {
             text-align: right;
-            margin-top: 50px;
+            margin-top: 45px;
             font-family: 'Great Vibes', cursive;
             font-size: 24px;
             color: #7b4f4f;
@@ -88,21 +149,19 @@
         .music {
             display: flex;
             justify-content: center;
-            margin-top: 30px;
+            margin-top: 35px;
         }
 
         .play-btn {
             background: #7b4f4f;
             color: white;
             border: none;
-            border-radius: 25px;
-            padding: 12px 25px;
-            font-size: 16px;
+            padding: 12px 28px;
+            border-radius: 30px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: background 0.3s;
         }
 
         .play-btn:hover {
@@ -110,123 +169,84 @@
         }
 
         .play-btn svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
             fill: white;
+        }
+
+        .petal {
+            position: fixed;
+            top: -60px;
+            left: 0;
+            pointer-events: none;
+            z-index: 2;
+            animation: fall linear infinite;
+            filter: drop-shadow(0 0 6px rgba(255, 200, 220, .45));
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateX(var(--drift)) translateY(-60px) rotate(0deg);
+            }
+
+            to {
+                transform: translateX(calc(var(--drift) + var(--wind))) translateY(110vh) rotate(var(--spin));
+            }
         }
     </style>
 </head>
 
 <body>
+
     <audio id="song" loop>
         <source src="music.mp3" type="audio/mp3">
     </audio>
 
-    <!-- ASCII Flowers -->
-    <pre class="ascii-flower">
-                 .... 
-                           ,;;'''';;,                    ,;;;;, 
-                 ,        ;;'      `;;,               .,;;;'   ; 
-              ,;;;       ;;          `;;,';;;,.     ,%;;'     ' 
-            ,;;,;;       ;;         ,;`;;;, `;::.  %%;' 
-           ;;;,;;;       `'       ,;;; ;;,;;, `::,%%;' 
-           ;;;,;;;,          .,%%%%%'% ;;;;,;;   %;;; 
- ,%,.      `;;;,;;;,    .,%%%%%%%%%'%; ;;;;;,;;  %;;; 
-;,`%%%%%%%%%%`;;,;;'%%%%%%%%%%%%%'%%'  `;;;;;,;, %;;; 
-;;;,`%%%%%%%%%%%,; ..`%%%%%%%%;'%%%'    `;;;;,;; %%;; 
- `;;;;;,`%%%%%,;;/, .. `"""'',%%%%%      `;;;;;; %%;;, 
-    `;;;;;;;,;;/////,.    ,;%%%%%%%        `;;;;,`%%;; 
-           ;;;/%%%%,%///;;;';%%%%%%,          `;;;%%;;, 
-          ;;;/%%%,%%%%%/;;;';;'%%%%%,             `%%;; 
-         .;;/%%,%%%%%//;;'  ;;;'%%%%%,             %%;;, 
-         ;;//%,%%%%//;;;'   `;;;;'%%%%             `%;;; 
-         ;;//%,%//;;;;'      `;;;;'%%%              %;;;, 
-         `;;//,/;;;'          `;;;'%%'              `%;;; 
-           `;;;;'               `;'%'                `;;;; 
-                                  '      .,,,.        `;;;; 
-                                      ,;;;;;;;;;;,     `;;;; 
-                                     ;;;'    ;;;,;;,    `;;;; 
-                                     ;;;      ;;;;,;;.   `;;;; 
-                                      `;;      ;;;;;,;;   ;;;; 
-                                        `'      `;;;;,;;  ;;;; 
-                                                   `;;,;, ;;;; 
-                                                      ;;, ;;;; 
-                                                        ';;;;; 
-                                                         ;;;;; 
-                                                        .;;;;' 
-                                                       .;;;;' 
-                                                      ;;;;;' 
-                                                     ,;;;;'
-</pre>
+    <img src="lilypng.png" class="lily l1">
+    <img src="lilypng.png" class="lily l2">
+    <img src="lilypng.png" class="lily l3">
+    <img src="lilypng.png" class="lily l4">
+    <img src="lilypng.png" class="lily l5">
 
-    <pre class="ascii-flower duplicate">
-                 .... 
-                           ,;;'''';;,                    ,;;;;, 
-                 ,        ;;'      `;;,               .,;;;'   ; 
-              ,;;;       ;;          `;;,';;;,.     ,%;;'     ' 
-            ,;;,;;       ;;         ,;`;;;, `;::.  %%;' 
-           ;;;,;;;       `'       ,;;; ;;,;;, `::,%%;' 
-           ;;;,;;;,          .,%%%%%'% ;;;;,;;   %;;; 
- ,%,.      `;;;,;;;,    .,%%%%%%%%%'%; ;;;;;,;;  %;;; 
-;,`%%%%%%%%%%`;;,;;'%%%%%%%%%%%%%'%%'  `;;;;;,;, %;;; 
-;;;,`%%%%%%%%%%%,; ..`%%%%%%%%;'%%%'    `;;;;,;; %%;; 
- `;;;;;,`%%%%%,;;/, .. `"""'',%%%%%      `;;;;;; %%;;, 
-    `;;;;;;;,;;/////,.    ,;%%%%%%%        `;;;;,`%%;; 
-           ;;;/%%%%,%///;;;';%%%%%%,          `;;;%%;;, 
-          ;;;/%%%,%%%%%/;;;';;'%%%%%,             `%%;; 
-         .;;/%%,%%%%%//;;'  ;;;'%%%%%,             %%;;, 
-         ;;//%,%%%%//;;;'   `;;;;'%%%%             `%;;; 
-         ;;//%,%//;;;;'      `;;;;'%%%              %;;;, 
-         `;;//,/;;;'          `;;;'%%'              `%;;; 
-           `;;;;'               `;'%'                `;;;; 
-                                  '      .,,,.        `;;;; 
-                                      ,;;;;;;;;;;,     `;;;; 
-                                     ;;;'    ;;;,;;,    `;;;; 
-                                     ;;;      ;;;;,;;.   `;;;; 
-                                      `;;      ;;;;;,;;   ;;;; 
-                                        `'      `;;;;,;;  ;;;; 
-                                                   `;;,;, ;;;; 
-                                                      ;;, ;;;; 
-                                                        ';;;;; 
-                                                         ;;;;; 
-                                                        .;;;;' 
-                                                       .;;;;' 
-                                                      ;;;;;' 
-                                                     ,;;;;'
-</pre>
+    <img src="lilypng.png" class="lily r1">
+    <img src="lilypng.png" class="lily r2">
+    <img src="lilypng.png" class="lily r3">
+    <img src="lilypng.png" class="lily r4">
+    <img src="lilypng.png" class="lily r5">
 
     <div class="container">
-        <h1 class="title">A Letter 4 U</h1>
+
+        <h1 class="title">Palanca Letter yarn??</h1>
 
         <div class="letter">
             <p>Dear <b>Lyanne Lei</b> ng Mundo,</p>
 
             <p>
                 Even though I’ve only known you for a short time, it’s been enough to see how determined and capable you
-                are.
-                As you are graduating and getting ready for a new chapter in your life, I just want to wish you all the
-                best.
-                May your dreams slowly turn into reality, and may every goal you set for yourself be reached in your own
-                time.
+                are. As you continue your journey, I just want to wish you all the best. May your dreams slowly turn
+                into reality,
+                and may every goal you set for yourself be reached in your own time.
             </p>
 
             <p>
-                College is only the beginning of a much bigger adventure ahead. I hope life brings you growth,
-                happiness,
-                and success in ways you’ve always hoped for. Believe in yourself and keep going. I really believe you
-                can do it.
-                And if life ever gets confusing, stressful, or just one of those “what am I doing with my life” moments,
-                you can always lean on me. I’m always ready to listen. :)
+                I also want to take a moment to thank you. Thank you for being inspiring, for sharing your energy and
+                positivity,
+                and for reminding me of the importance of kindness and dedication. Your presence has made a difference,
+                even in the little things, and I’m grateful to know you.
             </p>
 
             <p>
-                Good luck in everything that comes next. You’ve got this.
+                Life is full of moments that can feel confusing, overwhelming, or like we don’t know which way to go.
+                But always remember, you can lean on people who care about you—including me. I’m always ready to listen
+                (and give unsolicited advice if needed HAHAHAHAHAHAA).
+            </p>
+
+            <p>
+                Keep believing in yourself, keep moving forward, and never forget how much potential you have.
+                <b>PUHON</b> :))
             </p>
         </div>
 
-        <div class="signature">
-            — Krystian Uy
-        </div>
+        <div class="signature">— <b>Krystian Daniel Uy (sharksilog)</b></div>
 
         <div class="music">
             <button class="play-btn" onclick="document.getElementById('song').play()">
@@ -236,7 +256,38 @@
                 Play Music
             </button>
         </div>
+
     </div>
+
+    <script>
+        const petalCount = 60;
+
+        for (let i = 0; i < petalCount; i++) {
+            const p = document.createElement("img");
+            p.src = "petal.png";
+            p.className = "petal";
+
+            const left = Math.random() * 100;
+
+            p.style.left = left + "vw";
+            p.style.width = 10 + Math.random() * 14 + "px";
+            p.style.opacity = 0.4 + Math.random() * 0.5;
+            p.style.animationDuration = 10 + Math.random() * 12 + "s";
+            p.style.animationDelay = Math.random() * 12 + "s";
+
+            p.style.setProperty("--drift", "0px");
+            p.style.setProperty("--wind", (Math.random() * 40 - 20) + "vw");
+            p.style.setProperty("--spin", (Math.random() * 720 - 360) + "deg");
+
+            p.style.filter += ` blur(${Math.random() * 2}px)`;
+
+            document.body.appendChild(p);
+        }
+
+        const song = document.getElementById('song');
+        song.volume = 0.25;
+    </script>
+
 </body>
 
 </html>
